@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "裁剪图片",
+    "navigationStyle": "custom",
+    "disableScroll": true,
+    "usingComponents": {
+        "image-cropper": "../image-cropper/image-cropper",
+        "cu-custom": "/colorui/components/cu-custom"
+    }
+}

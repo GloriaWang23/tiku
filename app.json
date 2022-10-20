@@ -1,0 +1,17 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/image-detail/image-detail"
+    ],
+    "window": {
+      "navigationBarBackgroundColor": "#5a58f9",
+      "navigationBarTitleText": "网课答案查询",
+      "navigationBarTextStyle": "black"
+    },
+  
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

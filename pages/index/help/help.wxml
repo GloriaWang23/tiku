@@ -1,0 +1,44 @@
+
+
+<view class="main">
+    <view class="t">
+   
+        1.如何查题？
+    </view>
+    <view class="line"></view>
+    <view class="c">
+        1.在超星学习通/知到智慧树中复制题目。
+        <view class="lines"></view>
+        2.打开本程序粘贴复制的题目，点击搜索就可以进行搜索了。
+     
+    </view>
+    <view class="t">
+   
+        2.为什么显示的题目和我的题目不一样？
+    </view>
+    <view class="line"></view>
+    <view class="c">因为本程序是自动匹配最相似的题目的，所以可能会出现显示不对的情况，您可以<text class="red">减少符号的输入</text>或<text class="red">更换关键字</text>再次进行搜索</view>
+    <view class="t">
+        
+        3.怎么复制答案？
+    </view>
+    <view class="line"></view>
+    <view class="c">
+        对于选择题，你可以直接前往学习软件勾选。
+        <view class="lines"></view>
+        对于简答题，您可以点击答案区域，即可自动复制，或者长按选择复制也可以
+    </view>
+    <view class="t">
+    
+        4.最后一点
+    </view>
+    <view class="line"></view>
+    <view class="c">
+        关于广告问题
+        <view class="lines"></view>
+        虽然俺讨厌广告，但是服务器的费用是笔不小的支出，所以，可能会接一些不影响大家小程序体验的广告O(∩_∩)O~
+    </view>
+   
+    
+</view>
+

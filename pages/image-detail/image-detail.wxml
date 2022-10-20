@@ -1,0 +1,9 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">图片裁剪</view>
+</cu-custom>
+<image-cropper bindimageload="loadimage" bindload="cropperload" bindtapcut="clickcut" disable_rotate="{{true}}" height="{{height}}" id="image-cropper" imgSrc="{{src}}" limit_move="{{true}}" max_height="{{max_height}}" max_width="{{max_width}}" min_height="0" min_width="0" width="{{width}}"></image-cropper>
+<text class="hint">点击中间裁剪框选择题目区域</text>
+<view class="bottom">
+    <button bindtap="submit" class="cu-btn round shadow lg" wx:if="{{hidden}}" style="background-color:#5a58f9;color: #fff;font-weight:450;width:30%">确定</button>
+</view>

@@ -1,0 +1,128 @@
+<scroll-view style="margin-bottom:150rpx;" wx:if="{{PageCur=='search'}}">
+       <image bindtap="MustSee" class="banner" src="/images/logo.png"></image>
+    <view class="grid" style="padding:10rpx;">
+        <view bindtap="concatQuestion" class="text-center" data-keyword="{{item.words}}" style="margin:10rpx;" wx:if="{{keywords}}" wx:for="{{keywords}}" wx:key="item">
+            <button class="cu-btn round bg-blue" style="width:auto !important">{{item.words}}</button>
+        </view>
+    </view>
+     
+    <form bindsubmit="bindFormSubmit">
+        <view class="padding cu-form-group margin radius" maxlength="-1" style="">
+        
+            <text class="color" style="color:#000000;font-weight:550;font-size:15px;">答案搜索</text>
+            <text bindtap="paste" class="right" style="font-weight:450;font-size:14px;color:red;">粘贴</text>
+            <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>
+             <text bindtap="clear" class="right1"style="font-weight:450;font-size:14px;color:red;">清空</text>
+            
+        </view>
+        <view class="cu-form-group margin radius" wx:if="{{modalName!='DialogModal'}}">
+            <textarea maxlength="-1" name="question" placeholder="仅输入题干，不要加括号、选项，不要有错别字" value="{{questionVal}}"></textarea>
+        </view>
+    
+   <view class="flex flex-direction center">
+                <view class="flex justify-around" style="width:100%;margin: 30rpx;">
+                  
+                 <button class="cu-btn  margin-xs lg" openType="share" style="background-color:#5a58f9;color: #fff;width:43%;font-weight:450">分享好友</button>
+                <!-- <button class="cu-btn margin-xs lg" bindtap="ocr" style="background-color:#5a58f9;color: #fff;width:43%;font-weight:450">图片识别</button>-->
+                    <button class="cu-btn  margin-xs lg" formType="submit" style="background-color:#5a58f9;color: #fff;width:43%;font-weight:450">查询答案</button>
+       
+                    </view>
+                    </view>
+                    <view class="flex flex-direction center">
+         <button class="cu-btn margin-xs lg" style="background-color:#5a58f9;color: #fff;width:93%;margin: 0 0 0 0;font-weight:450"  openType="contact">联系客服</button>
+     
+        </view>
+   </form>
+        <view class="margin radius flex flex-direction flex-start" style="background-color: #fff;padding: 5rpx 5rpx;margin:30rpx" wx:if="{{result}}">
+        <view class="padding" maxlength="-1" style="box-shadow:0px 1px 0px 0px #E8E8E8;" wx:if="{{result}}">
+            
+            <text class="color" style="color:#000000;font-weight:550;font-size:14.5px;">   搜索结果</text>
+        </view>
+        <view class="padding" maxlength="-1" wx:if="{{result}}">
+            <text style="color:red;font-weight:550">题目：</text>{{result.question}}</view>
+        <view class="padding" maxlesngth="-1" wx:if="{{result}}">
+            <text style="color:red;font-weight:550">答案：</text>
+            <text bindtap="Tocopy" data-msg="{{result.answer}}">{{result.answer}}<text style="color:red">(复制答案)</text>
+            </text>
+          
+            </view>
+          
+    </view>
+    
+
+
+
+
+
+</scroll-view>
+<scroll-view style="margin-bottom:10rpx;" wx:if="{{PageCur=='user'}}">
+    <view class="headers" bindtap="MustSee">
+        <view class="header-image">
+        <open-data class="image" type="userAvatarUrl"></open-data>
+        <open-data type="userNickName"></open-data>
+        
+    </view>
+
+</view>
+
+    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+
+<view class="cu-item">
+            <button class="content" hoverClass="none" openType="share" style="display:flex;flex-direction:row;border: none;border-radius:16rpx;font-weight:400;">
+                <text class="cuIcon-creativefill text-green"></text>
+                <text class="text-grey">分享好友</text>
+            </button>
+        </view>
+
+        <view class="cu-item">
+
+            <button class="cu-btn content" openType="contact" hoverClass="none" style= "display:flex;flex-direction:row;border: none;border-radius:16rpx;font-weight:400;">
+                 <text class="cuIcon-roundaddfill text-orange"></text>
+                   <text class="text-grey">联系客服</text>
+                </button>
+        </view>
+        <view class="cu-item">
+            <view bindtap="MustSee" class="content" hoverClass="none" style="display:flex;flex-direction:row;border: none;border-radius:16rpx;font-weight:400;">
+       <text class="cuIcon-weixin text-blue"></text>
+            <text class="text-grey">关于</text>
+            </view>
+        </view>
+       
+        <view class="cu-item">
+
+<button bindtap="1" class="content" hoverClass="none" style="display:flex;flex-direction:row;border: none;border-radius:16rpx;font-weight:400;">
+    <text class="cuIcon-add text-cyan"></text>
+    <text class="text-grey">关联小程序</text>
+</button>
+
+</view>
+        
+        
+    </view>
+
+
+  
+<view class="copyright-info" style="margin-top:50rpx;" wx:if="{{PageCur=='user'}}">
+            <text decode="true" space="true">Copyright © 2020 网课答案查询</text>
+       
+        </view>
+
+
+    <view class="cu-tabbar-height"></view>
+    
+</scroll-view>
+<official-account></official-account>
+<view class="cu-bar tabbar bg-white shadow foot">
+    <view bindtap="NavChange" class="action" data-cur="search">
+        <view class="cuIcon-cu-image">
+            <image src="/images/tabbar/{{PageCur=='search'?'search_selected':'search'}}.png"></image>
+        </view>
+        <view class="{{PageCur=='search'?'text-blue':'text-gray'}}">搜题</view>
+    </view>
+    <view bindtap="NavChange" class="action" data-cur="user">
+        <view class="cuIcon-cu-image">
+            <image src="/images/tabbar/{{PageCur=='user'?'user_selected':'user'}}.png"></image>
+        </view>
+        <view class="{{PageCur=='user'?'text-blue':'text-gray'}}">我的</view>
+    </view>
+</view>
